@@ -2,6 +2,7 @@
 import './App.css';
 import Data from './Data';
 import CreateAccount from './create account';
+import signUp from './Pages/SignUp/signUp';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       
      <h1>App page</h1>
      {/* <Data/> */}
-  <CreateAccount/>
+     <CreateAccount/>
+     <signUp/>
      
     
       
