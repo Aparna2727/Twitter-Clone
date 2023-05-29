@@ -1,45 +1,106 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 export default function CreateAccount() {
-     const [form , setform ] = useState({
-        name:'',
-        phone :'',
-        email: '',
-        dob:''
-     })
+  const [form, setForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    dob: "",
+  });
 
-     const changehandler = (e) => {
-        setform({...form , [e.target.name] :e.target.value})
-        console.log(form)
-     }
+  const newdata = localStorage.getItem("form")
+    ? JSON.parse(localStorage.getItem("form"))
+    : [];
 
-     const handlesubmit = (e) => {
-      e.preventDefault()
-      if(!form.name || !form.email || !form.phone || !form.dob ){
-        alert ('Please fill the all Info ')
-      }
-      else {
-           alert ("You Have  Succesfully Completed Account  ")
-      }
+  const changeHandler = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-     }
+  const [errors, setErrors] = useState({});
+  const validateForm = () => {
+    const errors = {};
 
+    if (!form.name.trim()) {
+      errors.name = "Name is required.";
+    }
+    if (!form.phone.trim()) {
+      errors.phone = "Phone is required.";
+    }
+    if (!form.email.trim()) {
+      errors.email = "Email is required.";
+    }
+
+    if (!form.dob) {
+      errors.dob = "Date of Birth is required.";
+    }
+
+    return errors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validateForm();
+
+    if (Object.keys(validationErrors).length === 0) {
+      localStorage.setItem("form", JSON.stringify([...newdata, form]));
+      console.log(form);
+      setErrors({});
+    } else {
+      setErrors(validationErrors);
+    }
+  };
 
   return (
     <>
-     <div>Create Your account</div>
-    <form action="" onSubmit={handlesubmit}>
-       <label> <input type="text" placeholder='Name' name ='name' value={form.name} onChange={changehandler}/></label>
-       <br />
-       <label> <input type="text" placeholder='Phone'  name ='phone' value={form.phone} onChange={changehandler} /></label>
-       <br />
-       <label> <input type="email" placeholder='email'  name ='email' value={form.email} onChange={changehandler} /></label>
-       <br />
-       <label> <input type="date" placeholder='dob' name ='dob' value={form.dob} onChange={changehandler} /></label>
-       <br />
-       <button>Save</button>
-    </form>
+      <div>Create Your Account</div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            value={form.name}
+            onChange={changeHandler}
+          />
+          {errors.name}
+        </label>
+        <br />
+        <label>
+          <input
+            type="text"
+            placeholder="Phone"
+            name="phone"
+            value={form.phone}
+            onChange={changeHandler}
+          />
+          {errors.phone}
+        </label>
+        <br />
+        <label>
+          <input
+            type="text"
+            placeholder="Email"
+            name="email"
+            value={form.email}
+            onChange={changeHandler}
+          />
+          {errors.email}
+        </label>
+        <br />
+        <label>
+          <input
+            type="date"
+            placeholder="Date of Birth"
+            name="dob"
+            value={form.dob}
+            onChange={changeHandler}
+          />
+          {errors.dob}
+        </label>
+        <br />
+        <button type="submit">Save</button>
+      </form>
     </>
-   
-  )
+  );
 }
