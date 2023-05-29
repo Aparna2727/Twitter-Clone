@@ -1,6 +1,7 @@
 
 import './App.css';
 import Data from './Data';
+import SignUp from './Pages/SignUp/signUp';
 import CreateAccount from './create account';
 
 function App() {
@@ -9,9 +10,9 @@ function App() {
       
      <h1>App page</h1>
      {/* <Data/> */}
-  <CreateAccount/>
+  {/* <CreateAccount/> */}
      
-    
+    <SignUp/>
       
     </div>
   );
