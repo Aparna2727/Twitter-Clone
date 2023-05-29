@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Data from './Data';
+import CreateAccount from './create account';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+     <h1>App page</h1>
+     {/* <Data/> */}
+  <CreateAccount/>
+     
+    
+      
     </div>
   );
 }
