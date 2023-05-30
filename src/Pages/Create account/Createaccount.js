@@ -1,3 +1,4 @@
+import "./Create.module.css"
 import React, { useState } from "react";
 import Styles from "./Create.module.css";
 import TextField from "@mui/material/TextField";
@@ -59,7 +60,7 @@ export default function CreateAccount() {
         <div className={Styles.HiX}>
           <HiX size={40} />
         </div>
-        <h1>Create Your Account</h1>
+        <h1>Create Yourrr Account</h1>
         <form onSubmit={handleSubmit}>
           <div className={Styles.inname}>
             <label>
