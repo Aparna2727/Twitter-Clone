@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Styles from "./Create.module.css";
 import TextField from "@mui/material/TextField";
 import { HiX } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import SignUp from "../SignUp/signUp";
 export default function CreateAccount() {
   const [form, setForm] = useState({
     name: "",
@@ -163,9 +165,11 @@ export default function CreateAccount() {
           </div>
           <br />
 
+          <Link to ='signUP/'>
           <button className={Styles.btn} type="submit">
             Next
           </button>
+          </Link>
         </form>
       </div>
     </>
