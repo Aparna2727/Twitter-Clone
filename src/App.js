@@ -7,9 +7,11 @@ function App() {
     <div className="App">
       <h1>App page</h1>
       {/* <Data/> */}
-      {/* <CreateAccount/> */}
+      <CreateAccount/>
 
-      <SignUp />
+      
+
+      {/* <SignUp /> */}
     </div>
   );
 }
