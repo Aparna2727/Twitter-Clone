@@ -1,18 +1,15 @@
-import "./App.css";
-
 import Data from "./Data";
-import CreateAccount from "./Pages/Create account/Createaccount";
 import SignUp from "./Pages/SignUp/signUp";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CreateAccount from "./create account";
 
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
-       <Routes>
-        <Route exact path="/Createaccount"  element={<CreateAccount/>}/>
-       </Routes>
-     </BrowserRouter>
+      <h1>App page</h1>
+      {/* <Data/> */}
+      {/* <CreateAccount/> */}
+
+      <SignUp />
     </div>
   );
 }

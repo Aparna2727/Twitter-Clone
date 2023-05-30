@@ -1,18 +1,38 @@
 import React from 'react'
-import {GrTwitter} from 'react-icons/gr'
-import {FcGoogle} from 'react-icons/fc'
-// import { TextField } from '@mui/material/TextField';
-function SignUp() {
+import { Link } from 'react-router-dom';
+
+
+import {signUp} from './signUp.css';
+
+export default function SignUp() {
   return (
-    <>
-    <div class>
-        <div><GrTwitter color='royalblue' size={50}/></div>
-        <h1>Sign in to Twitter</h1>
-        <button><FcGoogle size={30}/>Sign up</button>
-        {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
-    </div>
-    </>
+    
+        <div className="logo">
+            <img src="./TwitterImg.png" className="logo-box"/>
+            <h2 className="heading">Join Twitter today</h2>
+
+            
+            <button>
+            <img src="./GoogleImg.png" className='logo-box' />
+            Sign Up with Google
+            </button>
+            
+            <button>
+            <img src="./AppleImg.png" className='logo-box' />
+            Sign Up with Apple
+            </button>
+            <hr></hr>
+            <span>or</span>
+
+           <div><button>Create account</button></div>
+            
+       
+            <p>By signing up, you agree to the <Link>Terms of Service</Link>and <Link>Privacy Policy</Link>, including <Link>Cookie Use</Link>.</p>
+         
+
+            <p>Have an account already?<Link>Log in</Link></p>
+
+        </div>
+    
   )
 }
-
-export default SignUp
