@@ -1,19 +1,24 @@
 
 import './App.css';
-import Data from './Data';
-import SignUp from './Pages/SignUp/signUp';
+import {Route, Routes} from 'react-router-dom';
+// import Data from './Data';
 import CreateAccount from './create account';
-import signUp from './Pages/SignUp/signUp';
+import SignUp from './Pages/SignUp/signUp';
+
 
 function App() {
   return (
     <div className="App">
       
-     <h1>App page</h1>
+    
      {/* <Data/> */}
-     <CreateAccount/>
-     <signUp/>
-     
+     {/* <Routes> 
+
+     <Route path='/createAccount' element = {<CreateAccount/>}/>
+     <Route path='/signUp' element = {<SignUp/>}/>
+
+     </Routes>
+      */}
     <SignUp/>
       
     </div>
