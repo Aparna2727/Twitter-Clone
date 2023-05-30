@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Styles from "./Create.module.css";
 import TextField from "@mui/material/TextField";
-import  { HiX } from 'react-icons/hi'
+import { HiX } from "react-icons/hi";
 export default function CreateAccount() {
-  
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -56,24 +55,22 @@ export default function CreateAccount() {
 
   return (
     <>
-    
       <div className={Styles.CreateAccount}>
         <div className={Styles.HiX}>
-          <HiX size={40}/>
+          <HiX size={40} />
         </div>
         <h1>Create Your Account</h1>
         <form onSubmit={handleSubmit}>
           <div className={Styles.inname}>
             <label>
-             
-            <input
-            className={Styles.inputname}
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={form.name}
-            onChange={changeHandler}
-          />
+              <input
+                className={Styles.inputname}
+                type="text"
+                placeholder="Name"
+                name="name"
+                value={form.name}
+                onChange={changeHandler}
+              />
               {/* <TextField
                 
                 id="outlined-basic"
@@ -90,15 +87,15 @@ export default function CreateAccount() {
           <br />
           <div className={Styles.inphone}>
             <label>
-            <input
-            className={Styles.inputphone}
-            type="text"
-            placeholder="Phone"
-            name="phone"
-            value={form.phone}
-            onChange={changeHandler}
-            required
-          />
+              <input
+                className={Styles.inputphone}
+                type="text"
+                placeholder="Phone"
+                name="phone"
+                value={form.phone}
+                onChange={changeHandler}
+                required
+              />
               {/* <TextField
                 className={Styles.inputphone}
                 id="outlined-basic"
@@ -114,16 +111,15 @@ export default function CreateAccount() {
           </div>
           <br />
           <div className={Styles.inemail}>
-          <label className={Styles.emaillabel}>
-          
-          <input
-            type="text"
-            placeholder="Email"
-            name="email"
-            value={form.email}
-            onChange={changeHandler}
-            className={Styles.inputemail}
-          />
+            <label className={Styles.emaillabel}>
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                value={form.email}
+                onChange={changeHandler}
+                className={Styles.inputemail}
+              />
               {/* <TextField
                 className={Styles.inputemail}
                 id="outlined-basic"
@@ -133,36 +129,36 @@ export default function CreateAccount() {
                 onChange={changeHandler}
                 required
               /> */}
-           {errors.email}
-          </label>
+              {errors.email}
+            </label>
           </div>
-           
+
           <br />
 
           <div className={Styles.Date_content}>
             <h3>Date of birth</h3>
-            <br/>
+            <br />
             <p>
               This will not be shown publicly. Confirm your own age, even if
               this account is for a business, a pet, or something else.
             </p>
           </div>
           <div className={Styles.indate}>
-          <label>
-            <input
-              type="date"
-              placeholder="Date of Birth"
-              name="dob"
-              value={form.dob}
-              onChange={changeHandler}
-              className={Styles.Date}
-            />
+            <label>
+              <input
+                type="date"
+                placeholder="Date of Birth"
+                name="dob"
+                value={form.dob}
+                onChange={changeHandler}
+                className={Styles.Date}
+              />
 
-            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+              {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker label='select-date' value={date} onChange={(newValue)=>setvalue(newValue)} renderinput={(props)=><TextField {...props}/>}/>
           </LocalizationProvider> */}
-            {errors.dob}
-          </label>
+              {errors.dob}
+            </label>
           </div>
           <br />
 
