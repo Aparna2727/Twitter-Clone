@@ -1,0 +1,19 @@
+.Trends{
+    width: 25%;
+    height: 25%;
+   
+}
+.Trends_search{
+    position: fixed;
+    width: 25%;
+    top: 10px;
+    right: 0;
+    border-bottom: 1px solid #e6ecf0;
+    padding-bottom: 20px;
+}
+.Trends_Control{
+    border: none;
+    width: 100%;
+    
+    
+}
